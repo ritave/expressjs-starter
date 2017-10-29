@@ -1,0 +1,12 @@
+version: "2"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./src:/home/node/app/src
+    ports:
+      - "127.0.0.1:8080:8080"
+      - "127.0.0.1:35729:35729"
+    command: "npm run serve"
