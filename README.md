@@ -15,3 +15,6 @@ using livereload
 ### Run development in Docker
 
     docker-compose -f docker-compose.dev.yml up
+
+### Known issues
+* When developing in Docker container, hot-reload works part-way only. It sees changes to existing files but doesn't see new files in the `src/` folder
