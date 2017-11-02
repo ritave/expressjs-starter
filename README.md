@@ -14,7 +14,16 @@ using livereload
 
 ### Run development in Docker
 
-    docker-compose -f docker-compose.dev.yml up
+    docker-compose -f docker-compose-dev.yml build
+    docker-compose -f docker-compose-dev.yml up
+
+## Create compiled files and production env
+
+    npm install
+    npm install -g gulp-cli
+    guilp build
+    docker-compose -f docker-compose-prod.yml build
+    docker-compose -f docker-compose-prod.yml up
 
 ## Known issues
 * When developing in Docker container, hot-reload works part-way only. It sees changes to existing files but doesn't see new files in the `src/` folder
